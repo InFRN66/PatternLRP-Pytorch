@@ -13,12 +13,7 @@ class Linear(nn.Linear):
         self.out_features = linear.out_features
         self.weight = linear.weight
         self.bias = linear.bias
-        """
-        Linearはそこが親クラス，Linear自体はnn.Moduleを継承しているのでinit()内に引数はいらない．
-        つまりLinearはそのクラス(Linear)でinitが完結してる？
-        一方ConvとかMaxPoolはその上に_ConvNdとか_MaxPoolNdクラスがあるので，それら上のクラスに情報を渡すために
-        init()内で引数指定している？initを_ConvNd内で行っている？
-        """
+        
 
     def pattern_LRP(self, R):
         B = self.weight * self.A # (out, in)
